@@ -1,0 +1,120 @@
+{
+  "phase": 9,
+  "name": "Persistence + AgentOps Hardening",
+  "baseline": "pu-agent-phase8.zip",
+  "date": "2026-10-04",
+  "added_files": [
+    "docs/phase9/MANIFEST.sha256",
+    "docs/phase9/PHASE_9_PERSISTENCE_AGENTOPS.md",
+    "docs/phase9/inventory.json",
+    "evals/deterministic/test_phase9_persistence_agentops.py",
+    "observability/README.md",
+    "observability/docker-compose.yml",
+    "observability/grafana/dashboards/pu-agentops.json",
+    "observability/grafana/provisioning/dashboards/dashboards.yaml",
+    "observability/grafana/provisioning/datasources/datasources.yaml",
+    "observability/otel-collector.yaml",
+    "observability/prometheus/prometheus.yml",
+    "observability/tempo.yaml",
+    "pu/ops/agentops.py",
+    "pu/persistence/__init__.py",
+    "pu/persistence/database.py",
+    "pu/persistence/events.py",
+    "pu/persistence/factory.py",
+    "pu/persistence/migrations.py",
+    "pu/persistence/workflows.py"
+  ],
+  "modified_files": [
+    "ARCHITECTURE.md",
+    "README.md",
+    "docs/architecture-whiteboard.png",
+    "docs/whiteboards/pu-architecture.excalidraw",
+    "pu/app.py",
+    "pu/approval/executor.py",
+    "pu/approval/repository.py",
+    "pu/approval/service.py",
+    "pu/config.py",
+    "pu/core/container.py",
+    "pu/core/interfaces/approval.py",
+    "pu/core/interfaces/events.py",
+    "pu/core/interfaces/orchestration.py",
+    "pu/core/interfaces/repositories.py",
+    "pu/db.py",
+    "pu/harness/__init__.py",
+    "pu/harness/audit.py",
+    "pu/harness/tools.py",
+    "pu/loop/agent.py",
+    "pu/ops/dashboard.py",
+    "pu/ops/static/js/main.js",
+    "pu/ops/static/js/views.js",
+    "pu/ops/tracing.py",
+    "pu/ops/whiteboard/build_pu_architecture.py",
+    "pu/orchestration/research.py"
+  ],
+  "removed_files": [],
+  "architecture": {
+    "operational_persistence": "SQLite connection-per-operation + versioned migrations",
+    "operational_repositories": [
+      "workflows",
+      "agent_events",
+      "tool_audit",
+      "approvals"
+    ],
+    "migration_version": 9001,
+    "workflow_recovery": "stage checkpoints + resume without rerunning completed stages",
+    "write_recovery": "fail-closed for in-flight side effects",
+    "read_retry_default": 2,
+    "agent_event_schema_version": 2,
+    "tool_audit": "SQLite durable ledger + redacted JSONL mirror",
+    "metrics": "dependency-free Prometheus /metrics",
+    "observability_stack": [
+      "OpenTelemetry Collector",
+      "Tempo",
+      "Prometheus",
+      "Grafana"
+    ],
+    "postgres_runtime_adapter": false
+  },
+  "metrics": {
+    "python_runtime": {
+      "files": 124,
+      "loc": 13120
+    },
+    "eval_python": {
+      "files": 59,
+      "loc": 7271
+    },
+    "frontend_js": {
+      "files": 9,
+      "loc": 2726
+    },
+    "deterministic_test_files": 52,
+    "deterministic_test_functions": 336,
+    "phase9_tests": 7
+  },
+  "validation": {
+    "phase3_to_phase9_targeted": "68 passed",
+    "dashboard_static_targeted": "22 passed",
+    "green_deterministic": "347 passed, 13 skipped, 5 deselected",
+    "full_deterministic": "347 passed, 13 skipped, 30 baseline failures",
+    "phase9_tests": "7 passed",
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "cli_help": "pass",
+    "observability_yaml": "pass (PyYAML parse)",
+    "grafana_dashboard_json": "pass",
+    "whiteboard_visual_qa": "pass",
+    "observability_compose_runtime": "not run (Docker unavailable in sandbox)"
+  },
+  "known_baseline_failures": {
+    "count": 30,
+    "source": "same prior-phase set: source ZIP lacks Git metadata/.env.example plus 5 stale assertions"
+  },
+  "assumptions": [
+    "SQLite is the shipped Phase-9 runtime adapter; PostgreSQL is repository/factory-ready but not implemented.",
+    "Side effects left in EXECUTING across restart fail closed because external outcome may be uncertain.",
+    "Only external non-side-effect reads receive automatic transient retries.",
+    "Deterministic orchestrator remains serial even though operational repositories are connection-per-operation.",
+    "Docker is unavailable in the build sandbox, so the observability compose stack was config-validated but not started."
+  ]
+}

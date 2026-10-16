@@ -1,0 +1,141 @@
+{
+  "phase": 6,
+  "name": "Human Approval + Write Capability Boundary",
+  "generated_at": "2026-10-04T10:09:20+00:00",
+  "baseline": "phase5",
+  "surfaces": {
+    "runtime_python": {
+      "files": 97,
+      "loc": 10614
+    },
+    "eval_python": {
+      "files": 55,
+      "loc": 6629
+    },
+    "frontend": {
+      "files": 11,
+      "loc": 3233
+    },
+    "deterministic_tests": {
+      "files": 49,
+      "test_functions": 311
+    },
+    "phase6_test_functions": 12
+  },
+  "providers": [
+    "anthropic",
+    "openai"
+  ],
+  "approval": {
+    "persistence": "SQLite proposed_actions",
+    "ttl_env": "PU_APPROVAL_TTL_MINUTES",
+    "default_ttl_minutes": 60,
+    "states": [
+      "pending",
+      "approved",
+      "rejected",
+      "executing",
+      "executed",
+      "failed",
+      "expired"
+    ],
+    "human_actor_assumption": "local-dashboard-user"
+  },
+  "agent_capabilities": [
+    "action:propose",
+    "calendar:read",
+    "knowledge:read",
+    "web:read"
+  ],
+  "agent_tool_names": [
+    "propose_create_event",
+    "list_events",
+    "propose_save_note",
+    "propose_send_message",
+    "search_web",
+    "search_knowledge",
+    "propose_manage_memory",
+    "propose_update_soul",
+    "propose_create_skill"
+  ],
+  "concrete_tools": [
+    {
+      "name": "create_event",
+      "capability": "calendar:write",
+      "scope": "calendar:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "list_events",
+      "capability": "calendar:read",
+      "scope": "calendar:read",
+      "side_effect": false,
+      "external": true
+    },
+    {
+      "name": "save_note",
+      "capability": "memory:write",
+      "scope": "memory:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "send_message",
+      "capability": "message:draft",
+      "scope": "message:draft",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "search_web",
+      "capability": "web:read",
+      "scope": "web:read",
+      "side_effect": false,
+      "external": true
+    },
+    {
+      "name": "search_knowledge",
+      "capability": "knowledge:read",
+      "scope": "knowledge:read",
+      "side_effect": false,
+      "external": false
+    },
+    {
+      "name": "manage_memory",
+      "capability": "memory:write",
+      "scope": "memory:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "update_soul",
+      "capability": "memory:write",
+      "scope": "memory:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "create_skill",
+      "capability": "skill:write",
+      "scope": "skill:write",
+      "side_effect": true,
+      "external": false
+    }
+  ],
+  "validation": {
+    "targeted": "48 passed, 11 skipped",
+    "green_gate": "322 passed, 13 skipped, 5 deselected",
+    "full_suite": "322 passed, 13 skipped, 30 baseline failures",
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "cli_help": "pass"
+  },
+  "known_limitations": [
+    "source snapshot lacks Git metadata and .env.example used by baseline repository-hygiene tests",
+    "five stale assertions remain intentionally excluded by the established green gate",
+    "dashboard human actor is a trusted local identity, not multi-user session auth",
+    "manage_memory is conservatively approval-gated because its definition mixes read/write semantics",
+    "Gmail send/reply concrete product tools are not present yet; future implementations must inherit this approval boundary"
+  ]
+}

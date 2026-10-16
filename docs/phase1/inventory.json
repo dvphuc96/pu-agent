@@ -1,0 +1,112 @@
+{
+  "phase": 1,
+  "project": "pu-agent",
+  "python_package": "pu",
+  "cli": "pu",
+  "runtime_home": ".pu",
+  "environment_namespace": "PU_*",
+  "counts": {
+    "python_files": 171,
+    "python_loc": 27549,
+    "static_js_files": 10,
+    "static_js_loc": 3784,
+    "static_css_files": 1,
+    "static_css_loc": 681,
+    "static_html_files": 1,
+    "static_html_loc": 76,
+    "pu_env_names": 59
+  },
+  "pu_env_names": [
+    "PU_API_KEY",
+    "PU_APPLE_CALENDAR",
+    "PU_APPLE_CALENDARS",
+    "PU_APPLE_TOOLS",
+    "PU_AUTORUN_TIMEOUT",
+    "PU_BASE_URL",
+    "PU_CONSOLIDATE_EVERY",
+    "PU_DASHBOARD_PORT",
+    "PU_DELEGATE_AUTORUN",
+    "PU_DELEGATE_ENV_DENY",
+    "PU_DELEGATE_TIMEOUT",
+    "PU_DISABLED_PROVIDERS",
+    "PU_DRIVE",
+    "PU_EDITOR",
+    "PU_EPISODIC_STORE",
+    "PU_EXPERIMENTAL",
+    "PU_FOLLOWUP_SECONDS",
+    "PU_GH_REPO",
+    "PU_GH_TOOL",
+    "PU_GMAIL",
+    "PU_GMAIL_LABEL",
+    "PU_GMAIL_MAX_MESSAGES",
+    "PU_GOOGLE_CALENDAR",
+    "PU_GOOGLE_CALENDAR_ID",
+    "PU_GRAPH_WORKFLOWS",
+    "PU_HISTORY_TURNS",
+    "PU_HOME",
+    "PU_JUDGE_",
+    "PU_JUDGE_CONCURRENCY",
+    "PU_JUDGE_MODEL",
+    "PU_JUDGE_PROVIDER",
+    "PU_LANGMEM_POSTGRES",
+    "PU_LLM_TIMEOUT",
+    "PU_MAX_ITERATIONS",
+    "PU_MAX_TOKENS",
+    "PU_MEMORY_PROBES",
+    "PU_MIC_THRESHOLD",
+    "PU_MODEL",
+    "PU_PROVIDER",
+    "PU_RETRIEVAL_TOP_K",
+    "PU_RUN_LIVE_EVALS",
+    "PU_SEARCH_API_KEY",
+    "PU_SEMANTIC_STORE",
+    "PU_SESSION_IDLE_MINUTES",
+    "PU_SMALL_MODEL",
+    "PU_TEST_BLANK",
+    "PU_TEST_LANGMEM",
+    "PU_TEST_MEM0",
+    "PU_TEST_SUPABASE",
+    "PU_TEST_ZEP",
+    "PU_TTS",
+    "PU_VOICE",
+    "PU_WAKE_ACK",
+    "PU_WAKE_LANG",
+    "PU_WAKE_WORD",
+    "PU_WHISPER_LANG",
+    "PU_WHISPER_MODEL",
+    "PU_WORKSPACE",
+    "PU_YOUTUBE"
+  ],
+  "legacy_identity": {
+    "path_occurrences": 0,
+    "utf8_text_files": 0
+  },
+  "mechanical_audit": {
+    "files_exact_after_expected_transform": 263,
+    "intentional_extra_diff_files": 9,
+    "removed_stale_visual_assets": 1
+  },
+  "validation": {
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "identity_tests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "targeted_characterization": {
+      "passed": 55,
+      "skipped": 1,
+      "dependency_blocked_failures": 5
+    },
+    "full_collection": {
+      "tests_collected_before_stop": 224,
+      "import_errors": 41,
+      "blocker": "missing anthropic SDK"
+    },
+    "package_build": {
+      "status": "blocked",
+      "blocker": "hatchling unavailable and no outbound package network"
+    }
+  },
+  "phase0_snapshot": "../pu-agent-phase0.zip (external artifact, not embedded in Phase 1 repo)"
+}

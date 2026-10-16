@@ -1,0 +1,10 @@
+PU Agent command-line entry points.
+
+pu                       chat in the terminal (default)
+pu dashboard             open the local browser cockpit
+pu connections           list configured integrations and health
+pu brief                 generate the existing local morning brief
+pu skill install <url>   install a community skill
+pu connect gmail         authorize Gmail
+pu connect drive         authorize Google Drive
+

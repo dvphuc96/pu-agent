@@ -1,0 +1,166 @@
+{
+  "phase": 3,
+  "date": "2026-10-04",
+  "baseline": "pu-agent-phase2.zip",
+  "identity": {
+    "project": "pu-agent",
+    "package": "pu",
+    "cli": "pu",
+    "env_prefix": "PU_",
+    "home": ".pu"
+  },
+  "metrics": {
+    "python_source": {
+      "files": 81,
+      "loc": 8508
+    },
+    "eval_python": {
+      "files": 52,
+      "loc": 5768
+    },
+    "frontend": {
+      "files": 11,
+      "loc": 3138
+    },
+    "deterministic_tests": {
+      "files": 46,
+      "functions": 279
+    },
+    "judge_tests": {
+      "files": 2,
+      "functions": 5
+    }
+  },
+  "contracts": {
+    "agent": [
+      "BaseAgent",
+      "AgentRuntime",
+      "AgentRunRequest",
+      "AgentResult"
+    ],
+    "llm": [
+      "LLMProvider",
+      "LLMRequest",
+      "LLMResponse",
+      "LLMToolDefinition",
+      "LLMToolCall",
+      "LLMUsage"
+    ],
+    "tool": [
+      "ToolDefinition",
+      "ToolContext",
+      "ToolResult",
+      "ToolContract",
+      "ToolHarness"
+    ],
+    "security": [
+      "SecurityDecision",
+      "SecurityPolicy",
+      "SecurityHarness"
+    ],
+    "repository": [
+      "MemoryRepository",
+      "ConnectionFactory"
+    ],
+    "workflow": [
+      "WorkflowEngine"
+    ],
+    "events": [
+      "AgentEvent",
+      "EventPublisher"
+    ]
+  },
+  "adapters": [
+    "LegacyAgentRuntimeAdapter",
+    "GraphWorkflowEngineAdapter",
+    "LegacyDirectToolHarness",
+    "CallableEventPublisher",
+    "CompositeEventPublisher"
+  ],
+  "composition_root": "pu/core/container.py",
+  "provider_boundary": "pu/providers/llm/legacy.py",
+  "compatibility_shim": "pu/loop/models.py",
+  "phase2_to_phase3": {
+    "added_files": [
+      "docs/phase3/PHASE_3_OOP_CONTRACTS.md",
+      "docs/phase3/inventory.json",
+      "evals/deterministic/test_phase3_architecture.py",
+      "pu/adapters/__init__.py",
+      "pu/adapters/events.py",
+      "pu/adapters/legacy/__init__.py",
+      "pu/adapters/legacy/agent_runtime.py",
+      "pu/adapters/legacy/tool_harness.py",
+      "pu/adapters/legacy/workflow.py",
+      "pu/agents/__init__.py",
+      "pu/agents/base.py",
+      "pu/core/__init__.py",
+      "pu/core/container.py",
+      "pu/core/interfaces/__init__.py",
+      "pu/core/interfaces/agents.py",
+      "pu/core/interfaces/events.py",
+      "pu/core/interfaces/llm.py",
+      "pu/core/interfaces/repositories.py",
+      "pu/core/interfaces/security.py",
+      "pu/core/interfaces/tools.py",
+      "pu/core/interfaces/workflow.py",
+      "pu/providers/__init__.py",
+      "pu/providers/llm/__init__.py",
+      "pu/providers/llm/base.py",
+      "pu/providers/llm/legacy.py"
+    ],
+    "removed_files": [],
+    "modified_files": [
+      "ARCHITECTURE.md",
+      "docs/README.md",
+      "docs/architecture-whiteboard.png",
+      "docs/whiteboards/pu-architecture.excalidraw",
+      "evals/deterministic/test_dotenv_discovery.py",
+      "evals/deterministic/test_integrations.py",
+      "evals/deterministic/test_models.py",
+      "evals/deterministic/test_pinned_models.py",
+      "evals/deterministic/test_provider_disabled.py",
+      "evals/deterministic/test_providers.py",
+      "evals/helpers.py",
+      "evals/judge/anthropic_judge.py",
+      "evals/judge/test_retrieval_gate_accuracy.py",
+      "pu/app.py",
+      "pu/config.py",
+      "pu/gateway/cli.py",
+      "pu/integrations.py",
+      "pu/loop/agent.py",
+      "pu/loop/models.py",
+      "pu/memory/__init__.py",
+      "pu/memory/consolidation.py",
+      "pu/memory/retrieval_gate.py",
+      "pu/ops/brief.py",
+      "pu/ops/browser_agent.py",
+      "pu/ops/catalog.py",
+      "pu/ops/judge.py",
+      "pu/ops/release_gate.py",
+      "pu/ops/settings_api.py",
+      "pu/ops/whiteboard/build_pu_architecture.py",
+      "pu/runtime/session.py",
+      "pu/tools/registry.py"
+    ]
+  },
+  "validation": {
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "cli_help": "pass",
+    "phase3_architecture_tests": "8 passed",
+    "vendor_boundary_offenders": 0,
+    "direct_constructor_offenders": 0,
+    "green_deterministic_gate": "284 passed, 13 skipped, 5 deselected",
+    "phase2_comparison_with_external_test_stub": "279 passed, 13 skipped, 30 failed",
+    "phase3_comparison_with_external_test_stub": "287 passed, 13 skipped, 30 failed",
+    "ruff": "blocked: ruff executable not installed in sandbox"
+  },
+  "known_baseline_failures": [
+    "runtime-data ignore tests require missing .git metadata/.env.example from source bundle",
+    "stale Phase-2 integration group assertions",
+    "stale local calendar output assertion",
+    "stale removed semantic_store setting assertion",
+    "stale triage llm-event assertion",
+    "browser-agent live construction requires Anthropic SDK package in sandbox"
+  ]
+}

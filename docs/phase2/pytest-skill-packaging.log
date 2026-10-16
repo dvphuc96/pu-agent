@@ -1,0 +1,4 @@
+ss.                                                                      [100%]
+=========================== short test summary info ============================
+SKIPPED [2] evals/deterministic/test_only_tracked_skills_ship.py:42: source bundle has no .git metadata; tracked-file assertions are not evaluable
+1 passed, 2 skipped in 0.05s

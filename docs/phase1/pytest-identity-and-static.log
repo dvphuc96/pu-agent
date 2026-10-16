@@ -1,0 +1,616 @@
+..............FFFFFFFFFFFFFFFFFFFFFFFFF......................            [100%]
+=================================== FAILURES ===================================
+___________ test_no_agent_home_leaks_its_runtime_data[state.db-.pu] ____________
+
+home = '.pu', artifact = 'state.db'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu/state.db would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu/state.db')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_______ test_no_agent_home_leaks_its_runtime_data[state.db-.pu-discord] ________
+
+home = '.pu-discord', artifact = 'state.db'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-discord/state.db would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-discord/state.db')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_________ test_no_agent_home_leaks_its_runtime_data[state.db-.pu-demo] _________
+
+home = '.pu-demo', artifact = 'state.db'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-demo/state.db would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-demo/state.db')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+____________ test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu] ____________
+
+home = '.pu', artifact = 'SOUL.md'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu/SOUL.md would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu/SOUL.md')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+________ test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu-discord] ________
+
+home = '.pu-discord', artifact = 'SOUL.md'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-discord/SOUL.md would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-discord/SOUL.md')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_________ test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu-demo] __________
+
+home = '.pu-demo', artifact = 'SOUL.md'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-demo/SOUL.md would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-demo/SOUL.md')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+__________ test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu] __________
+
+home = '.pu', artifact = 'usage.jsonl'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu/usage.jsonl would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu/usage.jsonl')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+______ test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu-discord] ______
+
+home = '.pu-discord', artifact = 'usage.jsonl'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-discord/usage.jsonl would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-discord/usage.jsonl')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_______ test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu-demo] ________
+
+home = '.pu-demo', artifact = 'usage.jsonl'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-demo/usage.jsonl would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-demo/usage.jsonl')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_________ test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu] __________
+
+home = '.pu', artifact = 'calendar.ics'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu/calendar.ics would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu/calendar.ics')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_____ test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu-discord] ______
+
+home = '.pu-discord', artifact = 'calendar.ics'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-discord/calendar.ics would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-discord/calendar.ics')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_______ test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu-demo] _______
+
+home = '.pu-demo', artifact = 'calendar.ics'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-demo/calendar.ics would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-demo/calendar.ics')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+____ test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu] ____
+
+home = '.pu', artifact = 'traces/2026-07-26.jsonl'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu/traces/2026-07-26.jsonl would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu/traces/2026-07-26.jsonl')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_ test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu-discord] _
+
+home = '.pu-discord', artifact = 'traces/2026-07-26.jsonl'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-discord/traces/2026-07-26.jsonl would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-discord/traces/2026-07-26.jsonl')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_ test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu-demo] __
+
+home = '.pu-demo', artifact = 'traces/2026-07-26.jsonl'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-demo/traces/2026-07-26.jsonl would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-demo/traces/2026-07-26.jsonl')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_______ test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu] ________
+
+home = '.pu', artifact = 'outbox/msg-1.txt'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu/outbox/msg-1.txt would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu/outbox/msg-1.txt')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+___ test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu-discord] ____
+
+home = '.pu-discord', artifact = 'outbox/msg-1.txt'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-discord/outbox/msg-1.txt would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-discord/outbox/msg-1.txt')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+_____ test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu-demo] _____
+
+home = '.pu-demo', artifact = 'outbox/msg-1.txt'
+
+    @pytest.mark.parametrize("home", [".pu", ".pu-discord", ".pu-demo"])
+    @pytest.mark.parametrize("artifact", ARTIFACTS)
+    def test_no_agent_home_leaks_its_runtime_data(home, artifact):
+        """A second agent home is a normal thing to have — one per gateway, one for
+        a demo recording. Every one of them must be invisible to git."""
+>       assert ignored(f"{home}/{artifact}"), (
+            f"{home}/{artifact} would be COMMITTED. That is the user's private data."
+        )
+E       AssertionError: .pu-demo/outbox/msg-1.txt would be COMMITTED. That is the user's private data.
+E       assert False
+E        +  where False = ignored('.pu-demo/outbox/msg-1.txt')
+
+evals/deterministic/test_runtime_data_is_ignored.py:48: AssertionError
+________________________ test_secrets_are_ignored[.env] ________________________
+
+secret = '.env'
+
+    @pytest.mark.parametrize("secret", [
+        ".env",
+        "credentials.json",            # Google OAuth client secret
+        "client_secret_123.json",      # what the Google console actually names it
+        "token.json",                  # a refresh token, worse than the key
+        ".gcp/service-account.json",
+    ])
+    def test_secrets_are_ignored(secret):
+        """The README tells people to drop credentials.json in the repo root, so the
+        ignore rule is load-bearing rather than belt-and-braces. Sean caught this
+        one missing on 2026-07-26."""
+>       assert ignored(secret), f"{secret} is not ignored — a key could be pushed"
+E       AssertionError: .env is not ignored — a key could be pushed
+E       assert False
+E        +  where False = ignored('.env')
+
+evals/deterministic/test_runtime_data_is_ignored.py:64: AssertionError
+__________________ test_secrets_are_ignored[credentials.json] __________________
+
+secret = 'credentials.json'
+
+    @pytest.mark.parametrize("secret", [
+        ".env",
+        "credentials.json",            # Google OAuth client secret
+        "client_secret_123.json",      # what the Google console actually names it
+        "token.json",                  # a refresh token, worse than the key
+        ".gcp/service-account.json",
+    ])
+    def test_secrets_are_ignored(secret):
+        """The README tells people to drop credentials.json in the repo root, so the
+        ignore rule is load-bearing rather than belt-and-braces. Sean caught this
+        one missing on 2026-07-26."""
+>       assert ignored(secret), f"{secret} is not ignored — a key could be pushed"
+E       AssertionError: credentials.json is not ignored — a key could be pushed
+E       assert False
+E        +  where False = ignored('credentials.json')
+
+evals/deterministic/test_runtime_data_is_ignored.py:64: AssertionError
+_______________ test_secrets_are_ignored[client_secret_123.json] _______________
+
+secret = 'client_secret_123.json'
+
+    @pytest.mark.parametrize("secret", [
+        ".env",
+        "credentials.json",            # Google OAuth client secret
+        "client_secret_123.json",      # what the Google console actually names it
+        "token.json",                  # a refresh token, worse than the key
+        ".gcp/service-account.json",
+    ])
+    def test_secrets_are_ignored(secret):
+        """The README tells people to drop credentials.json in the repo root, so the
+        ignore rule is load-bearing rather than belt-and-braces. Sean caught this
+        one missing on 2026-07-26."""
+>       assert ignored(secret), f"{secret} is not ignored — a key could be pushed"
+E       AssertionError: client_secret_123.json is not ignored — a key could be pushed
+E       assert False
+E        +  where False = ignored('client_secret_123.json')
+
+evals/deterministic/test_runtime_data_is_ignored.py:64: AssertionError
+_____________________ test_secrets_are_ignored[token.json] _____________________
+
+secret = 'token.json'
+
+    @pytest.mark.parametrize("secret", [
+        ".env",
+        "credentials.json",            # Google OAuth client secret
+        "client_secret_123.json",      # what the Google console actually names it
+        "token.json",                  # a refresh token, worse than the key
+        ".gcp/service-account.json",
+    ])
+    def test_secrets_are_ignored(secret):
+        """The README tells people to drop credentials.json in the repo root, so the
+        ignore rule is load-bearing rather than belt-and-braces. Sean caught this
+        one missing on 2026-07-26."""
+>       assert ignored(secret), f"{secret} is not ignored — a key could be pushed"
+E       AssertionError: token.json is not ignored — a key could be pushed
+E       assert False
+E        +  where False = ignored('token.json')
+
+evals/deterministic/test_runtime_data_is_ignored.py:64: AssertionError
+_____________ test_secrets_are_ignored[.gcp/service-account.json] ______________
+
+secret = '.gcp/service-account.json'
+
+    @pytest.mark.parametrize("secret", [
+        ".env",
+        "credentials.json",            # Google OAuth client secret
+        "client_secret_123.json",      # what the Google console actually names it
+        "token.json",                  # a refresh token, worse than the key
+        ".gcp/service-account.json",
+    ])
+    def test_secrets_are_ignored(secret):
+        """The README tells people to drop credentials.json in the repo root, so the
+        ignore rule is load-bearing rather than belt-and-braces. Sean caught this
+        one missing on 2026-07-26."""
+>       assert ignored(secret), f"{secret} is not ignored — a key could be pushed"
+E       AssertionError: .gcp/service-account.json is not ignored — a key could be pushed
+E       assert False
+E        +  where False = ignored('.gcp/service-account.json')
+
+evals/deterministic/test_runtime_data_is_ignored.py:64: AssertionError
+____________ test_nothing_from_a_runtime_home_is_currently_tracked _____________
+
+    def test_nothing_from_a_runtime_home_is_currently_tracked():
+        """The rules above only help going forward. If a file was committed BEFORE
+        the rule existed, .gitignore does not untrack it — git keeps following it
+        forever and check-ignore still says 'ignored'. This is the check that
+        catches that: ask git what it is actually tracking."""
+        # .env.example is the documented TEMPLATE and is tracked on purpose — every
+        # value in it is empty, commented, or a placeholder path. It is the one
+        # ".env*" file that belongs in the repo.
+        allowed = {".env.example"}
+>       tracked = subprocess.run(
+            ["git", "ls-files"], cwd=REPO, capture_output=True, text=True, check=True
+        ).stdout.splitlines()
+
+evals/deterministic/test_runtime_data_is_ignored.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'ls-files'],)
+kwargs = {'cwd': PosixPath('/mnt/data/pu-agent'), 'stderr': -1, 'stdout': -1, 'text': True}
+process = <Popen: returncode: 128 args: ['git', 'ls-files']>, stdout = ''
+stderr = 'fatal: not a git repository (or any of the parent directories): .git\n'
+retcode = 128
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'ls-files']' returned non-zero exit status 128.
+
+/usr/lib/python3.13/subprocess.py:577: CalledProcessError
+_________________ test_the_env_template_carries_no_real_values _________________
+
+    def test_the_env_template_carries_no_real_values():
+        """.env.example is tracked, so a pasted key there is a pushed key. Every
+        assignment must be empty or a placeholder — the file teaches which variables
+        exist, never what they are set to."""
+>       lines = (REPO / ".env.example").read_text(encoding="utf-8").splitlines()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+evals/deterministic/test_runtime_data_is_ignored.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/mnt/data/pu-agent/.env.example'), mode = 'r', buffering = -1
+encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/pu-agent/.env.example'
+
+/usr/lib/python3.13/pathlib/_local.py:539: FileNotFoundError
+=========================== short test summary info ============================
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[state.db-.pu] - AssertionError: .pu/state.db would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu/state.db')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[state.db-.pu-discord] - AssertionError: .pu-discord/state.db would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-discord/state.db')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[state.db-.pu-demo] - AssertionError: .pu-demo/state.db would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-demo/state.db')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu] - AssertionError: .pu/SOUL.md would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu/SOUL.md')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu-discord] - AssertionError: .pu-discord/SOUL.md would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-discord/SOUL.md')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu-demo] - AssertionError: .pu-demo/SOUL.md would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-demo/SOUL.md')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu] - AssertionError: .pu/usage.jsonl would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu/usage.jsonl')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu-discord] - AssertionError: .pu-discord/usage.jsonl would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-discord/usage.jsonl')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu-demo] - AssertionError: .pu-demo/usage.jsonl would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-demo/usage.jsonl')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu] - AssertionError: .pu/calendar.ics would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu/calendar.ics')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu-discord] - AssertionError: .pu-discord/calendar.ics would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-discord/calendar.ics')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu-demo] - AssertionError: .pu-demo/calendar.ics would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-demo/calendar.ics')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu] - AssertionError: .pu/traces/2026-07-26.jsonl would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu/traces/2026-07-26.jsonl')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu-discord] - AssertionError: .pu-discord/traces/2026-07-26.jsonl would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-discord/traces/2026-07-26.jsonl')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu-demo] - AssertionError: .pu-demo/traces/2026-07-26.jsonl would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-demo/traces/2026-07-26.jsonl')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu] - AssertionError: .pu/outbox/msg-1.txt would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu/outbox/msg-1.txt')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu-discord] - AssertionError: .pu-discord/outbox/msg-1.txt would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-discord/outbox/msg-1.txt')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu-demo] - AssertionError: .pu-demo/outbox/msg-1.txt would be COMMITTED. That is the user's private data.
+assert False
+ +  where False = ignored('.pu-demo/outbox/msg-1.txt')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[.env] - AssertionError: .env is not ignored — a key could be pushed
+assert False
+ +  where False = ignored('.env')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[credentials.json] - AssertionError: credentials.json is not ignored — a key could be pushed
+assert False
+ +  where False = ignored('credentials.json')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[client_secret_123.json] - AssertionError: client_secret_123.json is not ignored — a key could be pushed
+assert False
+ +  where False = ignored('client_secret_123.json')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[token.json] - AssertionError: token.json is not ignored — a key could be pushed
+assert False
+ +  where False = ignored('token.json')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[.gcp/service-account.json] - AssertionError: .gcp/service-account.json is not ignored — a key could be pushed
+assert False
+ +  where False = ignored('.gcp/service-account.json')
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_nothing_from_a_runtime_home_is_currently_tracked - subprocess.CalledProcessError: Command '['git', 'ls-files']' returned non-zero exit status 128.
+FAILED evals/deterministic/test_runtime_data_is_ignored.py::test_the_env_template_carries_no_real_values - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/pu-agent/.env.example'
+25 failed, 36 passed in 0.72s

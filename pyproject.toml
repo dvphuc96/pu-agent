@@ -1,0 +1,125 @@
+[project]
+name = "pu-agent"
+version = "0.1.5"
+description = "A local-first multi-agent research assistant with security, approval, evaluation, durable persistence, and AgentOps."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sean Chen (ShenSeanChen)" }]
+requires-python = ">=3.11"
+keywords = ["ai-agent", "llm", "agent-framework", "local-first", "llmops", "memory", "eval"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "anthropic>=0.40",   # Anthropic provider
+    "openai>=1.50",      # OpenAI provider
+    "python-dotenv>=1.0",
+    "rich>=13.0",
+]
+
+[project.scripts]
+# Branded CLI: `pu dashboard`, `pu connections`, `pu brief`, or `pu` to chat.
+pu = "pu.__main__:main"
+
+[project.optional-dependencies]
+sources = ["pypdf>=5.0"]
+# Evaluation harness: deterministic tests need pytest; judge evals use deepeval.
+eval = [
+    "pytest>=8.0",
+    "deepeval>=2.0",
+]
+# AgentOps/tracing.
+tracing = [
+    "arize-phoenix>=7.0",
+    "opentelemetry-sdk>=1.27",
+    "opentelemetry-exporter-otlp>=1.27",
+]
+# Google Calendar integration.
+gcal = [
+    "google-api-python-client>=2.0",
+    "google-auth>=2.0",
+    "google-auth-httplib2>=0.2",
+    "httplib2>=0.22",
+    "google-auth-oauthlib>=1.0",
+]
+# Gmail integration.
+gmail = [
+    "google-api-python-client>=2.0",
+    "google-auth>=2.0",
+    "google-auth-httplib2>=0.2",
+    "httplib2>=0.22",
+    "google-auth-oauthlib>=1.0",
+]
+# Google Drive knowledge import.
+drive = [
+    "google-api-python-client>=2.0",
+    "google-auth>=2.0",
+    "google-auth-httplib2>=0.2",
+    "httplib2>=0.22",
+    "google-auth-oauthlib>=1.0",
+]
+# Readable PDF reports (the .html render itself needs no extra).
+pdf = [
+    "xhtml2pdf>=0.2.11",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff==0.16.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# An sdist should be what you need to BUILD and TEST pu — source, bundled
+# skills, schema, evals. Left alone it was 2.6 MB, and 2.5 MB of that was a
+# whiteboard PNG and the .excalidraw sources, plus the agent tooling (.claude,
+# .agents, .pi) that only matters inside this repo. All of it stays on GitHub,
+# where people actually read it; none of it belongs in a package download.
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "docs", "examples",
+    ".claude", ".agents", ".pi", ".deepeval", ".github",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pu"]
+
+# The bundled skills live at the repo root because that is where contributors
+# add them (CONTRIBUTING.md, CI's validate-skills job, `skills/community/`).
+# But `packages = ["pu"]` ships only the package, so before 2026-07-31 a
+# `pip install pu-agent` arrived with ZERO skills — procedural memory, one of
+# the four pillars, silently absent while the dashboard shipped fine (it lives
+# under pu/ops/static). Copying them in at build time keeps one contributor-
+# facing location and still ships them; pu.memory.bundled_skill_dirs() looks
+# in both places and explains why.
+[tool.hatch.build.targets.wheel.force-include]
+"skills" = "pu/skills"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# Rules pu IGNORES on purpose — each is a deliberate style choice, not an
+# oversight. If you're tempted to remove one, read the reason first:
+ignore = [
+    "BLE001",  # blind `except Exception` is the documented pattern: tools and
+               # observers surface errors as text instead of crashing the loop
+    "DTZ001", "DTZ005", "DTZ011",  # naive local datetimes are intentional —
+               # daily trace files and workspace folders are named in the
+               # user's local day, not UTC
+    "S110",    # try/except/pass around optional integrations (OTel, extras)
+    # RUF100 flags a `# noqa` for a rule that is no longer enabled. Because the
+    # rules above are globally ignored, ANY `# noqa: BLE001` a contributor
+    # writes — the natural, correct-looking thing to write next to a broad
+    # `except Exception` — becomes a CI failure in a file they never touched.
+    # That footgun blocked two community PRs (#14, #26) on 2026-07-26. Turning
+    # RUF100 off costs us the ability to spot genuinely stale noqas; leaving it
+    # on costs contributors a red CI they can't explain. Contributors win.
+    "RUF100",
+]

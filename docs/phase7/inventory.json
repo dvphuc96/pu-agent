@@ -1,0 +1,212 @@
+{
+  "phase": 7,
+  "name": "Specialized Agents + Deterministic Orchestrator",
+  "generated_at": "2026-10-04T10:43:00.190685+00:00",
+  "baseline": "phase6",
+  "surfaces": {
+    "runtime_python": {
+      "files": 109,
+      "loc": 11146
+    },
+    "eval_python": {
+      "files": 56,
+      "loc": 6773
+    },
+    "frontend": {
+      "files": 11,
+      "loc": 3256
+    },
+    "deterministic_tests": {
+      "files": 50,
+      "test_functions": 319
+    },
+    "phase7_test_functions": 8
+  },
+  "providers": [
+    "anthropic",
+    "openai"
+  ],
+  "workflow": {
+    "name": "morning_research",
+    "shape": [
+      "email",
+      "fanout(company,web,calendar,memory)",
+      "report"
+    ],
+    "execution": "deterministic serial fan-out branches; fan-in before report",
+    "external_write": false
+  },
+  "agents": [
+    {
+      "key": "email",
+      "agent_id": "email-agent",
+      "name": "Email Agent",
+      "tools": [
+        "read_email_inbox"
+      ],
+      "capabilities": [
+        "email:read"
+      ],
+      "read_only": true
+    },
+    {
+      "key": "company",
+      "agent_id": "company-info-agent",
+      "name": "Company Info Agent",
+      "tools": [
+        "search_knowledge",
+        "search_memory"
+      ],
+      "capabilities": [
+        "knowledge:read",
+        "memory:read"
+      ],
+      "read_only": true
+    },
+    {
+      "key": "web",
+      "agent_id": "web-research-agent",
+      "name": "Web Research Agent",
+      "tools": [
+        "search_web"
+      ],
+      "capabilities": [
+        "web:read"
+      ],
+      "read_only": true
+    },
+    {
+      "key": "calendar",
+      "agent_id": "calendar-agent",
+      "name": "Calendar Agent",
+      "tools": [
+        "list_events"
+      ],
+      "capabilities": [
+        "calendar:read"
+      ],
+      "read_only": true
+    },
+    {
+      "key": "memory",
+      "agent_id": "memory-agent",
+      "name": "Memory Agent",
+      "tools": [
+        "search_memory"
+      ],
+      "capabilities": [
+        "memory:read"
+      ],
+      "read_only": true
+    },
+    {
+      "key": "report",
+      "agent_id": "report-generation-agent",
+      "name": "Report Generation Agent",
+      "tools": [],
+      "capabilities": [],
+      "read_only": true
+    }
+  ],
+  "concrete_tools": [
+    {
+      "name": "create_event",
+      "capability": "calendar:write",
+      "scope": "calendar:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "list_events",
+      "capability": "calendar:read",
+      "scope": "calendar:read",
+      "side_effect": false,
+      "external": true
+    },
+    {
+      "name": "save_note",
+      "capability": "memory:write",
+      "scope": "memory:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "send_message",
+      "capability": "message:draft",
+      "scope": "message:draft",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "search_web",
+      "capability": "web:read",
+      "scope": "web:read",
+      "side_effect": false,
+      "external": true
+    },
+    {
+      "name": "read_email_inbox",
+      "capability": "email:read",
+      "scope": "email:read",
+      "side_effect": false,
+      "external": false
+    },
+    {
+      "name": "search_knowledge",
+      "capability": "knowledge:read",
+      "scope": "knowledge:read",
+      "side_effect": false,
+      "external": false
+    },
+    {
+      "name": "search_memory",
+      "capability": "memory:read",
+      "scope": "memory:read",
+      "side_effect": false,
+      "external": false
+    },
+    {
+      "name": "manage_memory",
+      "capability": "memory:write",
+      "scope": "memory:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "update_soul",
+      "capability": "memory:write",
+      "scope": "memory:write",
+      "side_effect": true,
+      "external": false
+    },
+    {
+      "name": "create_skill",
+      "capability": "skill:write",
+      "scope": "skill:write",
+      "side_effect": true,
+      "external": false
+    }
+  ],
+  "new_read_tools": [
+    "read_email_inbox",
+    "search_memory"
+  ],
+  "ui": [
+    "Agents",
+    "Research"
+  ],
+  "validation": {
+    "phase7_tests": "8 passed",
+    "green_gate": "330 passed, 13 skipped, 5 deselected",
+    "full_suite": "330 passed, 13 skipped, 30 baseline failures",
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "cli_help": "pass"
+  },
+  "assumptions": [
+    "company system-of-record is not specified; internal company evidence uses Knowledge + Memory",
+    "web research uses search snippets/URLs; controlled full-page fetch is not yet implemented",
+    "fan-out is logically independent but serial while local SQLite connection/session is shared",
+    "report is a Markdown draft; structured provenance/evaluation schema is Phase 8"
+  ]
+}

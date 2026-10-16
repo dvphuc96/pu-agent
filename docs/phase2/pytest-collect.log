@@ -1,0 +1,406 @@
+evals/deterministic/test_all_history.py::test_all_history_returns_every_thread
+evals/deterministic/test_all_history.py::test_single_thread_history_is_scoped
+evals/deterministic/test_all_history.py::test_thread_history_includes_meta
+evals/deterministic/test_browser_agent.py::test_rebuild_keeps_the_conversation
+evals/deterministic/test_browser_agent.py::test_rebuild_without_a_prior_agent_still_gets_a_dated_session
+evals/deterministic/test_browser_agent.py::test_a_failed_rebuild_keeps_the_working_agent
+evals/deterministic/test_connections_cli.py::test_cli_returns_failure_for_configured_error
+evals/deterministic/test_dashboard_routes.py::test_every_post_route_is_registered
+evals/deterministic/test_dashboard_routes.py::test_every_get_path_is_served
+evals/deterministic/test_dashboard_routes.py::test_streaming_surface_contains_only_chat_and_graph
+evals/deterministic/test_dashboard_routes.py::test_retained_handlers_are_callable
+evals/deterministic/test_dashboard_routes.py::test_collect_returns_keys_the_page_reads
+evals/deterministic/test_dashboard_routes.py::test_removed_benchmark_routes_stay_removed
+evals/deterministic/test_dotenv_discovery.py::test_dotenv_is_found_from_the_working_directory
+evals/deterministic/test_dotenv_discovery.py::test_the_loaded_path_is_recorded
+evals/deterministic/test_dotenv_discovery.py::test_a_subdirectory_still_finds_the_project_env
+evals/deterministic/test_dotenv_discovery.py::test_the_error_never_points_at_a_file_pip_users_do_not_have
+evals/deterministic/test_dotenv_discovery.py::test_the_error_says_how_to_get_a_key
+evals/deterministic/test_dotenv_discovery.py::test_the_error_names_the_env_file_in_play
+evals/deterministic/test_dotenv_discovery.py::test_the_error_mentions_the_other_providers
+evals/deterministic/test_dotenv_discovery.py::test_every_provider_has_somewhere_to_get_a_key
+evals/deterministic/test_graph_flag.py::test_settings_exposes_the_flag_so_the_ui_can_render_a_toggle
+evals/deterministic/test_graph_flag.py::test_turning_it_off_is_not_swallowed
+evals/deterministic/test_graph_flag.py::test_an_explicit_setting_beats_the_global_env_switch
+evals/deterministic/test_graph_flag.py::test_env_var_is_what_load_settings_reads
+evals/deterministic/test_graph_stream.py::test_an_unknown_workflow_is_refused_without_importing_anything
+evals/deterministic/test_graph_stream.py::test_the_runner_table_exposes_only_triage
+evals/deterministic/test_graph_stream.py::test_every_event_survives_json_dumps
+evals/deterministic/test_graph_stream.py::test_node_output_never_rides_along
+evals/deterministic/test_graph_stream.py::test_the_run_ends_with_done_carrying_the_digest
+evals/deterministic/test_graph_stream.py::test_a_runner_that_explodes_reports_instead_of_500ing
+evals/deterministic/test_history_window.py::test_prompt_history_is_windowed
+evals/deterministic/test_history_window.py::test_default_window_is_generous_but_finite
+evals/deterministic/test_html_escaping.py::test_esc_escapes_both_quote_characters
+evals/deterministic/test_html_escaping.py::test_esc_still_escapes_the_original_three
+evals/deterministic/test_html_escaping.py::test_the_character_class_covers_everything_it_maps
+evals/deterministic/test_html_escaping.py::test_model_output_in_an_attribute_is_escaped_at_the_helper
+evals/deterministic/test_integrations.py::test_registry_contains_only_supported_product_connections
+evals/deterministic/test_integrations.py::test_registry_field_contract
+evals/deterministic/test_integrations.py::test_status_masks_secrets_and_persists_health
+evals/deterministic/test_integrations.py::test_connections_exclude_ai_providers
+evals/deterministic/test_integrations.py::test_otel_probe_checks_configured_collector_tcp_port
+evals/deterministic/test_integrations.py::test_otel_probe_rejects_endpoint_without_tcp_port
+evals/deterministic/test_integrations.py::test_apply_rejects_unknown_and_can_clear_secret
+evals/deterministic/test_integrations.py::test_probe_table_has_no_removed_integrations
+evals/deterministic/test_judge.py::test_parses_score_and_reason
+evals/deterministic/test_judge.py::test_score_is_clamped_0_10
+evals/deterministic/test_judge.py::test_extracts_json_from_surrounding_prose
+evals/deterministic/test_judge.py::test_empty_reply_is_not_judged
+evals/deterministic/test_judge.py::test_bad_json_degrades_to_none
+evals/deterministic/test_list_events.py::test_list_events_merges_sources_and_labels_them
+evals/deterministic/test_list_events.py::test_list_events_empty_names_calendars_checked
+evals/deterministic/test_list_events.py::test_list_events_graceful_failure_of_one_source
+evals/deterministic/test_list_events.py::test_list_events_respects_date_boundaries
+evals/deterministic/test_list_events.py::test_list_events_no_home_does_not_crash
+evals/deterministic/test_models.py::test_supported_provider_registry_is_exact
+evals/deterministic/test_models.py::test_defaults_are_concrete_and_tool_capable_choices
+evals/deterministic/test_models.py::test_anthropic_client_uses_anthropic_sdk
+evals/deterministic/test_models.py::test_openai_client_uses_openai_adapter
+evals/deterministic/test_models.py::test_unknown_provider_fails_with_supported_choices
+evals/deterministic/test_models.py::test_foreign_inherited_model_is_dropped_on_provider_switch
+evals/deterministic/test_only_tracked_skills_ship.py::test_every_skill_on_disk_is_tracked
+evals/deterministic/test_only_tracked_skills_ship.py::test_no_untracked_files_inside_a_tracked_skill
+evals/deterministic/test_only_tracked_skills_ship.py::test_the_build_still_force_includes_skills
+evals/deterministic/test_pinned_models.py::test_pin_persists_and_marks_first_per_provider_default
+evals/deterministic/test_pinned_models.py::test_default_model_for_reads_first_pinned
+evals/deterministic/test_pinned_models.py::test_make_default_moves_model_to_front_of_group
+evals/deterministic/test_pinned_models.py::test_unpin_promotes_next_default
+evals/deterministic/test_pinned_models.py::test_default_pairs_are_product_providers_only
+evals/deterministic/test_pinned_models.py::test_defaults_apply_only_for_keyed_providers
+evals/deterministic/test_provider_disabled.py::test_disabled_providers_parsing
+evals/deterministic/test_provider_disabled.py::test_toggle_persists_and_roundtrips
+evals/deterministic/test_provider_disabled.py::test_toggle_rejects_unknown_and_current
+evals/deterministic/test_provider_disabled.py::test_settings_info_reports_only_supported_disabled_values
+evals/deterministic/test_provider_disabled.py::test_every_provider_has_a_logo
+evals/deterministic/test_providers.py::test_every_provider_has_key_help_and_pricing
+evals/deterministic/test_providers.py::test_model_pricing_only_contains_supported_provider_families
+evals/deterministic/test_providers.py::test_every_priced_model_has_a_knowledge_cutoff
+evals/deterministic/test_providers.py::test_price_for_layers_model_over_provider
+evals/deterministic/test_pu_identity.py::test_distribution_package_and_cli_are_pu
+evals/deterministic/test_pu_identity.py::test_default_runtime_home_uses_pu_namespace
+evals/deterministic/test_pu_identity.py::test_repository_has_no_legacy_identity_in_paths_or_utf8_text
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[state.db-.pu]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[state.db-.pu-alt]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[state.db-.pu-demo]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu-alt]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[SOUL.md-.pu-demo]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu-alt]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[usage.jsonl-.pu-demo]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu-alt]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[calendar.ics-.pu-demo]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu-alt]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[traces/2026-07-26.jsonl-.pu-demo]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu-alt]
+evals/deterministic/test_runtime_data_is_ignored.py::test_no_agent_home_leaks_its_runtime_data[outbox/msg-1.txt-.pu-demo]
+evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[.env]
+evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[credentials.json]
+evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[client_secret_123.json]
+evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[token.json]
+evals/deterministic/test_runtime_data_is_ignored.py::test_secrets_are_ignored[.gcp/service-account.json]
+evals/deterministic/test_runtime_data_is_ignored.py::test_nothing_from_a_runtime_home_is_currently_tracked
+evals/deterministic/test_runtime_data_is_ignored.py::test_the_env_template_carries_no_real_values
+evals/deterministic/test_scoring.py::test_expect_tool_none_wants_no_call
+evals/deterministic/test_scoring.py::test_expect_tool_must_fire
+evals/deterministic/test_scoring.py::test_expect_in_args_substring
+evals/deterministic/test_scoring.py::test_min_tool_calls_floor
+evals/deterministic/test_scoring.py::test_case_for_message_matches_trimmed_input
+evals/deterministic/test_scoring.py::test_real_dataset_loads_and_every_case_is_scoreable
+evals/deterministic/test_session_resume.py::test_recent_dashboard_thread_is_resumed
+evals/deterministic/test_session_resume.py::test_idle_thread_is_not_resumed
+evals/deterministic/test_session_resume.py::test_most_recent_of_several_threads_wins
+evals/deterministic/test_session_resume.py::test_only_dashboard_source_threads_are_resumed
+evals/deterministic/test_session_resume.py::test_new_chat_s_prefixed_thread_is_resumed
+evals/deterministic/test_session_rotation.py::test_idle_session_rotates
+evals/deterministic/test_session_rotation.py::test_active_session_stays
+evals/deterministic/test_session_rotation.py::test_empty_session_stays
+evals/deterministic/test_session_rotation.py::test_rotation_can_be_disabled
+evals/deterministic/test_show_trace.py::test_trace_renders_an_indented_timeline
+evals/deterministic/test_show_trace.py::test_a_turn_that_never_ended_does_not_indent_the_rest_of_the_day
+evals/deterministic/test_show_trace.py::test_missing_trace_is_reported_without_error
+evals/deterministic/test_show_trace.py::test_recent_days_skips_missing_days
+evals/deterministic/test_slash_commands.py::test_triage_is_discovered_and_takes_a_message
+evals/deterministic/test_slash_commands.py::test_discovery_requires_both_halves
+evals/deterministic/test_slash_commands.py::test_runner_table_and_commands_cannot_drift
+evals/deterministic/test_slash_commands.py::test_a_leading_slash_is_a_command
+evals/deterministic/test_slash_commands.py::test_ordinary_messages_are_not_commands
+evals/deterministic/test_slash_commands.py::test_an_unknown_command_explains_itself
+evals/deterministic/test_slash_commands.py::test_the_listing_names_every_runnable_workflow
+evals/deterministic/test_slash_commands.py::test_running_an_unknown_name_returns_none_rather_than_raising
+evals/deterministic/test_slash_commands.py::test_triage_without_a_message_explains_itself_instead_of_running
+evals/deterministic/test_static_assets.py::test_referenced_assets_exist
+evals/deterministic/test_static_assets.py::test_connection_card_logos_match_retained_integrations_exactly
+evals/deterministic/test_static_assets.py::test_connection_display_groups_match_phase2_product
+evals/deterministic/test_static_assets.py::test_every_registry_group_has_a_display_name
+evals/deterministic/test_static_assets.py::test_inline_handlers_are_defined
+evals/deterministic/test_static_assets.py::test_removed_frontend_surfaces_stay_removed
+evals/deterministic/test_static_js_parses.py::test_there_are_scripts_to_check
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[diagram.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[dock.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[graph.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[main.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[memory.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[models.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[render.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[util.js]
+evals/deterministic/test_static_js_parses.py::test_every_dashboard_script_parses[views.js]
+evals/deterministic/test_tool_trigger.py::test_create_event_writes_db_and_ics
+evals/deterministic/test_tool_trigger.py::test_create_event_is_idempotent
+evals/deterministic/test_tool_trigger.py::test_history_records_tool_use
+evals/deterministic/test_tool_trigger.py::test_no_tool_turn_ends_loop_in_one_iteration
+evals/deterministic/test_tool_trigger.py::test_iteration_guardrail_stops_runaway_loop
+evals/deterministic/test_tool_trigger.py::test_dataset_case[schedule-basic]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[schedule-applies-memory]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[remember-preference]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[draft-message]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[no-tool-general-knowledge]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[pokemon-team]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[worldcup-final]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[chitchat-no-action]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[exact-count-sessions]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[remember-and-book]
+evals/deterministic/test_tool_trigger.py::test_dataset_case[read-before-write]
+evals/deterministic/test_trace_encoding.py::test_tracer_writes_utf8_when_platform_default_cannot
+evals/deterministic/test_trace_encoding.py::test_dashboard_reads_utf8_without_platform_default
+evals/deterministic/test_trace_encoding.py::test_dashboard_reports_legacy_non_utf8_trace_without_modifying_it
+evals/deterministic/test_trace_encoding.py::test_tracer_refuses_to_append_to_legacy_non_utf8_trace
+evals/deterministic/test_trace_encoding.py::test_dashboard_ops_view_surfaces_trace_encoding_errors
+evals/deterministic/test_turn_meta.py::test_turn_meta_is_saved_with_gate_and_iterations
+evals/deterministic/test_turn_meta.py::test_no_tool_turn_still_saves_meta
+evals/deterministic/test_turn_meta.py::test_old_rows_without_meta_are_tolerated
+evals/deterministic/test_working_memory.py::test_system_prompt_includes_current_time
+evals/deterministic/test_working_memory.py::test_session_tags_history_with_its_session_id
+evals/deterministic/test_working_memory.py::test_system_prompt_includes_own_model_identity
+
+==================================== ERRORS ====================================
+___________ ERROR collecting evals/deterministic/test_cli_memory.py ____________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_cli_memory.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_cli_memory.py:6: in <module>
+    from pu.gateway.cli import _memory_snapshot
+pu/gateway/cli.py:15: in <module>
+    from pu.app import PU
+pu/app.py:11: in <module>
+    from pu.loop.agent import LoopResult, Observer, run_loop
+pu/loop/agent.py:24: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+__________ ERROR collecting evals/deterministic/test_consolidation.py __________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_consolidation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_consolidation.py:28: in <module>
+    from pu.memory.consolidation import SUMMARIZER_PROMPT, consolidate_if_due
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+_____ ERROR collecting evals/deterministic/test_fact_store_conformance.py ______
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_fact_store_conformance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_fact_store_conformance.py:18: in <module>
+    from pu.memory.semantic.base import FactStore
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+___________ ERROR collecting evals/deterministic/test_gcal_oauth.py ____________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_gcal_oauth.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_gcal_oauth.py:11: in <module>
+    from pu.tools import calendar, google_calendar
+pu/tools/__init__.py:13: in <module>
+    from pu.tools import calendar, memory_admin, messages, notes, search
+pu/tools/memory_admin.py:17: in <module>
+    from pu.memory import bundled_skill_dirs
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+______________ ERROR collecting evals/deterministic/test_gmail.py ______________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_gmail.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_gmail.py:15: in <module>
+    from pu.tools import gmail
+pu/tools/__init__.py:13: in <module>
+    from pu.tools import calendar, memory_admin, messages, notes, search
+pu/tools/memory_admin.py:17: in <module>
+    from pu.memory import bundled_skill_dirs
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+_________ ERROR collecting evals/deterministic/test_google_calendar.py _________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_google_calendar.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_google_calendar.py:11: in <module>
+    from pu.tools import calendar
+pu/tools/__init__.py:13: in <module>
+    from pu.tools import calendar, memory_admin, messages, notes, search
+pu/tools/memory_admin.py:17: in <module>
+    from pu.memory import bundled_skill_dirs
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+__________ ERROR collecting evals/deterministic/test_graph_engine.py ___________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_graph_engine.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_graph_engine.py:16: in <module>
+    from pu.graph.nodes import key_router
+pu/graph/nodes.py:14: in <module>
+    from pu.loop.agent import run_loop
+pu/loop/agent.py:24: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+___________ ERROR collecting evals/deterministic/test_graph_nodes.py ___________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_graph_nodes.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_graph_nodes.py:11: in <module>
+    from pu.graph.nodes import agent_node, llm_node, tool_node
+pu/graph/nodes.py:14: in <module>
+    from pu.loop.agent import run_loop
+pu/loop/agent.py:24: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+_____ ERROR collecting evals/deterministic/test_graph_topology_payload.py ______
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_graph_topology_payload.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_graph_topology_payload.py:11: in <module>
+    from pu.graph.workflows.triage import build_triage_graph, triage_topology
+pu/graph/workflows/triage.py:26: in <module>
+    from pu.graph.nodes import key_router
+pu/graph/nodes.py:14: in <module>
+    from pu.loop.agent import run_loop
+pu/loop/agent.py:24: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+____________ ERROR collecting evals/deterministic/test_knowledge.py ____________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_knowledge.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_knowledge.py:16: in <module>
+    from pu.memory import knowledge
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+__________ ERROR collecting evals/deterministic/test_memory_search.py __________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_memory_search.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_memory_search.py:33: in <module>
+    from pu.memory.episodic.store import SqliteEpisodeStore
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+____________ ERROR collecting evals/deterministic/test_packaging.py ____________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_packaging.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_packaging.py:30: in <module>
+    from pu.memory import bundled_skill_dirs
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+_________ ERROR collecting evals/deterministic/test_retrieval_gate.py __________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_retrieval_gate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_retrieval_gate.py:25: in <module>
+    from pu.memory.retrieval_gate import GATE_PROMPT, should_retrieve
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+_________ ERROR collecting evals/deterministic/test_skill_encoding.py __________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_skill_encoding.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_skill_encoding.py:9: in <module>
+    from pu.memory.procedural import installer
+pu/memory/__init__.py:17: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+_________ ERROR collecting evals/deterministic/test_triage_workflow.py _________
+ImportError while importing test module '/mnt/data/pu-agent/evals/deterministic/test_triage_workflow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evals/deterministic/test_triage_workflow.py:15: in <module>
+    from pu.graph.workflows.triage import classify_message, todays_events
+pu/graph/workflows/triage.py:26: in <module>
+    from pu.graph.nodes import key_router
+pu/graph/nodes.py:14: in <module>
+    from pu.loop.agent import run_loop
+pu/loop/agent.py:24: in <module>
+    import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+=========================== short test summary info ============================
+ERROR evals/deterministic/test_cli_memory.py
+ERROR evals/deterministic/test_consolidation.py
+ERROR evals/deterministic/test_fact_store_conformance.py
+ERROR evals/deterministic/test_gcal_oauth.py
+ERROR evals/deterministic/test_gmail.py
+ERROR evals/deterministic/test_google_calendar.py
+ERROR evals/deterministic/test_graph_engine.py
+ERROR evals/deterministic/test_graph_nodes.py
+ERROR evals/deterministic/test_graph_topology_payload.py
+ERROR evals/deterministic/test_knowledge.py
+ERROR evals/deterministic/test_memory_search.py
+ERROR evals/deterministic/test_packaging.py
+ERROR evals/deterministic/test_retrieval_gate.py
+ERROR evals/deterministic/test_skill_encoding.py
+ERROR evals/deterministic/test_triage_workflow.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 15 errors during collection !!!!!!!!!!!!!!!!!!!
+178 tests collected, 15 errors in 0.89s

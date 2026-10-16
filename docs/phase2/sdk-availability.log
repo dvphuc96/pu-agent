@@ -1,0 +1,3 @@
+== SDK availability ==
+anthropic MISSING ModuleNotFoundError No module named 'anthropic'
+openai MISSING ModuleNotFoundError No module named 'openai'

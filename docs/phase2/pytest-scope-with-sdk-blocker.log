@@ -1,0 +1,50 @@
+........................................................................ [ 75%]
+...........F........ss.                                                  [100%]
+=================================== FAILURES ===================================
+______ test_dashboard_reports_legacy_non_utf8_trace_without_modifying_it _______
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-32/test_dashboard_reports_legacy_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f6a8dec8b40>
+
+    def test_dashboard_reports_legacy_non_utf8_trace_without_modifying_it(tmp_path, monkeypatch):
+        home = tmp_path / "home"
+        trace = _today_trace(home)
+        trace.parent.mkdir(parents=True)
+        original = (
+            json.dumps({"type": "turn_start", "user_message": "中文"}, ensure_ascii=False) + "\n"
+        ).encode("gbk")
+        trace.write_bytes(original)
+        monkeypatch.setenv("PU_HOME", str(home))
+    
+>       data = collect()
+               ^^^^^^^^^
+
+evals/deterministic/test_trace_encoding.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pu/ops/dashboard.py:315: in collect
+    from pu.memory import bundled_skill_dirs
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Memory facade — the three pillars behind one small interface.
+    
+        procedural  SKILL.md files      how to act
+        semantic    facts table (FTS5)  what is durably true
+        episodic    episodes table      what happened, when
+    
+    Plus the two agents that manage them:
+        retrieval_gate   decides IF a turn needs memory   (hero moment #1)
+        consolidation    distills chats into facts, every N exchanges
+    """
+    
+    from __future__ import annotations
+    
+    import sqlite3
+    from pathlib import Path
+    
+>   import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+
+pu/memory/__init__.py:17: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED evals/deterministic/test_trace_encoding.py::test_dashboard_reports_legacy_non_utf8_trace_without_modifying_it - ModuleNotFoundError: No module named 'anthropic'
+1 failed, 92 passed, 2 skipped in 1.87s

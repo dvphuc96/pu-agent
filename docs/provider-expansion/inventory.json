@@ -1,0 +1,76 @@
+{
+  "update": "provider-expansion",
+  "date": "2026-10-05",
+  "version": "0.1.5",
+  "providers": {
+    "anthropic": {
+      "display_name": "Anthropic",
+      "key_env": "ANTHROPIC_API_KEY",
+      "base_url": null,
+      "base_url_env": "PU_ANTHROPIC_BASE_URL",
+      "default_model": "claude-sonnet-5",
+      "default_small_model": "claude-haiku-4-5-20251001",
+      "openai_compatible": false,
+      "catalog_url": "https://api.anthropic.com/v1/models"
+    },
+    "openai": {
+      "display_name": "OpenAI",
+      "key_env": "OPENAI_API_KEY",
+      "base_url": null,
+      "base_url_env": "PU_OPENAI_BASE_URL",
+      "default_model": "gpt-5.5",
+      "default_small_model": "gpt-4.1-mini",
+      "openai_compatible": false,
+      "catalog_url": "https://api.openai.com/v1/models"
+    },
+    "openrouter": {
+      "display_name": "OpenRouter",
+      "key_env": "OPENROUTER_API_KEY",
+      "base_url": "https://openrouter.ai/api/v1",
+      "base_url_env": "PU_OPENROUTER_BASE_URL",
+      "default_model": "anthropic/claude-sonnet-5",
+      "default_small_model": "google/gemini-3.8-flash",
+      "openai_compatible": true,
+      "catalog_url": "https://openrouter.ai/api/v1/models"
+    },
+    "deepseek": {
+      "display_name": "DeepSeek",
+      "key_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "base_url_env": "PU_DEEPSEEK_BASE_URL",
+      "default_model": "deepseek-v4-pro",
+      "default_small_model": "deepseek-flash",
+      "openai_compatible": true,
+      "catalog_url": "https://api.deepseek.com/models"
+    },
+    "glm": {
+      "display_name": "GLM",
+      "key_env": "ZAI_API_KEY",
+      "base_url": "https://api.z.ai/api/paas/v4",
+      "base_url_env": "PU_GLM_BASE_URL",
+      "default_model": "glm-5.3",
+      "default_small_model": "glm-5.3-flash",
+      "openai_compatible": true,
+      "catalog_url": null
+    },
+    "gemini": {
+      "display_name": "Gemini",
+      "key_env": "GEMINI_API_KEY",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "base_url_env": "PU_GEMINI_BASE_URL",
+      "default_model": "gemini-3.8-flash",
+      "default_small_model": "gemini-3.5-flash-lite",
+      "openai_compatible": true,
+      "catalog_url": "https://generativelanguage.googleapis.com/v1beta/openai/models"
+    }
+  },
+  "validation": {
+    "deterministic": "388 passed, 13 skipped, 0 failed",
+    "all_evals": "388 passed, 41 skipped, 0 failed",
+    "provider_targeted": "56 passed, 0 failed",
+    "python_compile": "pass",
+    "javascript_syntax": "pass",
+    "env_example": "pass",
+    "cli": "pass"
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 36">
+  <title>Gmail</title>
+  <!-- Gmail "M": the envelope that everyone recognises, drawn flat so it
+       reads at the card's 20px logo size like the other connection logos. -->
+  <path fill="#4285F4" d="M3.27 36h6.55V16.36L0 8.73V32.73C0 34.54 1.47 36 3.27 36z"/>
+  <path fill="#34A853" d="M38.18 36h6.55c1.8 0 3.27-1.46 3.27-3.27V8.73l-9.82 7.63V36z"/>
+  <path fill="#FBBC04" d="M38.18 3.27v13.09L48 8.73V4.91c0-4.05-4.62-6.36-7.85-3.93l-1.97 1.5z"/>
+  <path fill="#EA4335" d="M9.82 16.36V3.27L24 14.18 38.18 3.27v13.09L24 27.27 9.82 16.36z"/>
+  <path fill="#C5221F" d="M0 4.91v3.82l9.82 7.63V3.27L7.85 1.77C4.62-.66 0 1.65 0 4.91z"/>
+</svg>

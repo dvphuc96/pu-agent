@@ -1,0 +1,113 @@
+{
+  "phase": 5,
+  "date": "2026-10-04",
+  "baseline": "pu-agent-phase4.zip",
+  "identity": {
+    "project": "pu-agent",
+    "package": "pu",
+    "cli": "pu",
+    "env_prefix": "PU_",
+    "home": ".pu"
+  },
+  "metrics": {
+    "python_source": {"files": 91, "loc": 9736},
+    "eval_python": {"files": 54, "loc": 6371},
+    "frontend": {"files": 11, "loc": 3156},
+    "deterministic_tests": {"files": 48, "functions": 299},
+    "judge_tests": {"files": 2, "functions": 5}
+  },
+  "tool_execution": {
+    "registry": "pu/tools/registry.py",
+    "harness": "pu/harness/tools.py",
+    "security": "pu/harness/security.py",
+    "audit": "pu/harness/audit.py",
+    "audit_path": ".pu/traces/tool-audit.jsonl",
+    "rate_limit_env": "PU_TOOL_RATE_LIMIT_PER_MINUTE",
+    "default_rate_limit_per_minute": 120
+  },
+  "security_policies": [
+    "SSRFPolicy",
+    "SecretEgressPolicy",
+    "PromptInjectionPolicy"
+  ],
+  "product_capabilities": [
+    "calendar:read",
+    "calendar:write",
+    "email:read",
+    "knowledge:read",
+    "memory:write",
+    "message:draft",
+    "skill:write",
+    "web:read"
+  ],
+  "phase4_to_phase5": {
+    "added_files": [
+      "docs/phase5/PHASE_5_TOOL_SECURITY_HARNESS.md",
+      "evals/deterministic/test_phase5_tool_security_harness.py",
+      "pu/harness/__init__.py",
+      "pu/harness/audit.py",
+      "pu/harness/security.py",
+      "pu/harness/tools.py"
+    ],
+    "removed_files": [],
+    "modified_files": [
+      "ARCHITECTURE.md",
+      "README.md",
+      "docs/README.md",
+      "docs/architecture-whiteboard.png",
+      "docs/whiteboards/pu-architecture.excalidraw",
+      "evals/deterministic/test_phase3_architecture.py",
+      "pu/adapters/legacy/agent_runtime.py",
+      "pu/adapters/legacy/tool_harness.py",
+      "pu/app.py",
+      "pu/config.py",
+      "pu/core/container.py",
+      "pu/core/interfaces/agents.py",
+      "pu/core/interfaces/security.py",
+      "pu/core/interfaces/tools.py",
+      "pu/graph/nodes.py",
+      "pu/loop/agent.py",
+      "pu/ops/dashboard.py",
+      "pu/ops/static/index.html",
+      "pu/ops/static/js/main.js",
+      "pu/ops/static/js/views.js",
+      "pu/ops/whiteboard/build_pu_architecture.py",
+      "pu/tools/__init__.py",
+      "pu/tools/calendar.py",
+      "pu/tools/gmail.py",
+      "pu/tools/knowledge_search.py",
+      "pu/tools/memory_admin.py",
+      "pu/tools/messages.py",
+      "pu/tools/notes.py",
+      "pu/tools/registry.py",
+      "pu/tools/search.py"
+    ],
+    "generated_metadata_excluded": [
+      "docs/phase5/inventory.json",
+      "docs/phase5/MANIFEST.sha256"
+    ]
+  },
+  "validation": {
+    "phase5_harness_tests": "11 passed",
+    "targeted_phase3_phase4_phase5_dashboard_static": "53 passed",
+    "dashboard_static_gate": "33 passed",
+    "deterministic_green_gate": "310 passed, 13 skipped, 5 deselected",
+    "deterministic_full": "310 passed, 13 skipped, 30 baseline failures",
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "cli_help": "pass",
+    "registry_execute_callsites_in_product_runtime": 0,
+    "direct_tool_execute_callsites_outside_harness": 0,
+    "architecture_whiteboard_visual_qa": "pass"
+  },
+  "known_baseline_failures": {
+    "runtime_git_metadata_suite": "source ZIP has no .git/.env.example",
+    "stale_phase2_scope_assertions": 4,
+    "stale_triage_event_assertions": 1
+  },
+  "assumptions": [
+    "Local-first single-user runtime uses local-user as the trusted principal until authenticated multi-user sessions are introduced.",
+    "Rate limiting is in-process in Phase 5; distributed deployments require shared enforcement state.",
+    "Human approval and approval-hash binding are intentionally deferred to Phase 6."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "phase": 10,
+  "name": "Target Architecture Lock-in",
+  "completed_at": "2026-10-04",
+  "project": "pu-agent",
+  "package": "pu",
+  "files": {
+    "snapshot_files_before_manifest": 292
+  },
+  "loc": {
+    "python_runtime": {
+      "files": 119,
+      "lines": 12700
+    },
+    "python_evals": {
+      "files": 60,
+      "lines": 7355
+    },
+    "frontend": {
+      "files": 11,
+      "lines": 3308
+    }
+  },
+  "tests": {
+    "deterministic_files": 53,
+    "deterministic_test_functions": 341,
+    "full_deterministic": {
+      "passed": 382,
+      "skipped": 13,
+      "failed": 0
+    },
+    "phase3_to_phase10_targeted": {
+      "passed": 77,
+      "failed": 0
+    },
+    "phase10_architecture": {
+      "passed": 9,
+      "failed": 0
+    },
+    "judge": {
+      "skipped": 28,
+      "reason": "no live provider credentials in sandbox"
+    }
+  },
+  "providers": [
+    "anthropic",
+    "openai"
+  ],
+  "specialized_agents": [
+    "EmailAgent",
+    "CompanyInfoAgent",
+    "WebResearchAgent",
+    "CalendarAgent",
+    "MemoryAgent",
+    "ReportGenerationAgent"
+  ],
+  "removed_paths": [
+    "pu/adapters/legacy/",
+    "pu/loop/models.py",
+    "pu/providers/llm/compat.py",
+    "pu/providers/llm/legacy.py",
+    "sql/init_supabase.sql"
+  ],
+  "added_architecture_guards": [
+    "single composition-root construction path",
+    "metadata-only ToolRegistry",
+    "provider-neutral runtime/tests",
+    "provider-scoped base URLs",
+    "separate memory read/write capabilities",
+    "approval database boundary",
+    "distributable privacy/config artifacts"
+  ],
+  "phase9_to_phase10_diff": {
+    "removed_files": 8,
+    "added_files": 5,
+    "modified_files": 86
+  },
+  "static_gates": {
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "cli_help": "pass",
+    "env_example_check": "pass",
+    "observability_yaml": "pass",
+    "grafana_json": "pass",
+    "stale_removed_path_scan": 0,
+    "direct_registry_execute_calls": 0,
+    "vendor_imports_outside_provider_adapters": 0,
+    "ruff": "not_installed"
+  },
+  "environment": {
+    "anthropic_sdk_installed": false,
+    "openai_sdk_installed": false,
+    "ruff_installed": false,
+    "docker_runtime_validated": false,
+    "observability_configs_parsed": true
+  }
+}

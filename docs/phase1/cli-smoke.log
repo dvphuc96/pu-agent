@@ -1,0 +1,16 @@
+Entrypoints — installed as the `pu` command (and `python -m pu`):
+
+pu                       chat in the terminal (default)
+  pu dashboard             the browser cockpit → localhost:9000 (+ Telegram if configured)
+pu connections           list configured integrations and their health
+pu voice                 talk to it (needs the [voice] extra)
+pu telegram              phone → laptop (needs TELEGRAM_BOT_TOKEN)
+pu discord               Discord → laptop (needs DISCORD_BOT_TOKEN)
+pu whatsapp              WhatsApp → laptop (needs WHATSAPP_TOKEN, public URL)
+pu brief                 morning briefing (calendar + mail + memory) — as a LOOP
+pu gather                same job as a GRAPH: github, web, calendar and
+                           memory fetched together, then one digest
+pu skill install <url>   install a community skill
+pu connect gmail         sign in to Gmail (read-only) for the CRM inbox
+pu connect drive         sign in to Google Drive (read-only) for Knowledge
+

@@ -1,0 +1,2 @@
+$ python -m compileall -q pu evals scripts examples
+exit=0

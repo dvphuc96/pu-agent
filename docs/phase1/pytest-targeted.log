@@ -1,0 +1,229 @@
+.................s.......F.............FFFF..................            [100%]
+=================================== FAILURES ===================================
+______________ test_switching_provider_adopts_its_pinned_default _______________
+
+home = PosixPath('/tmp/pytest-of-root/pytest-13/test_switching_provider_adopts0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7143e23150>
+
+    def test_switching_provider_adopts_its_pinned_default(home, monkeypatch):
+        """apply_provider on a provider change uses that provider's pinned default,
+        never carrying the previous provider's model across endpoints (the live
+        kimi->gemini 404)."""
+        monkeypatch.setenv("GEMINI_API_KEY", "g")
+        monkeypatch.setenv("MOONSHOT_API_KEY", "k")
+        (home / "models.json").write_text(json.dumps({"pinned": ["kimi:kimi-k3"]}))
+>       from pu import integrations
+
+/mnt/data/pu-agent/evals/deterministic/test_pinned_models.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/mnt/data/pu-agent/pu/integrations.py:24: in <module>
+    from pu.memory.episodic.notion_store import normalize_database_id
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """Memory facade — the three pillars behind one small interface.
+    
+        procedural  SKILL.md files      how to act
+        semantic    facts table (FTS5)  what is durably true
+        episodic    episodes table      what happened, when
+    
+    Plus the two agents that manage them:
+        retrieval_gate   decides IF a turn needs memory   (hero moment #1)
+        consolidation    distills chats into facts, every N exchanges
+    """
+    
+    from __future__ import annotations
+    
+    import sqlite3
+    from pathlib import Path
+    
+>   import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+
+/mnt/data/pu-agent/pu/memory/__init__.py:17: ModuleNotFoundError
+__________________________ test_idle_session_rotates ___________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-13/test_idle_session_rotates0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7143be9f90>
+
+    def test_idle_session_rotates(tmp_path, monkeypatch):
+        monkeypatch.setenv("PU_SESSION_IDLE_MINUTES", "60")
+>       app = make_pu(tmp_path / "home", client=ScriptedClient([]))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+evals/deterministic/test_session_rotation.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evals/helpers.py:56: in make_pu
+    from pu.app import PU
+pu/app.py:11: in <module>
+    from pu.loop.agent import LoopResult, Observer, run_loop
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """THE LOOP — observe → reason → act → repeat. This file is the whole trick.
+    
+    Every agent framework is ultimately this while-loop with more indirection:
+    
+        while not done:
+            response = llm(messages, tools)          # reason
+            if response asks for tools:
+                results = run(tool_calls)            # act
+                messages += results                  # observe
+            else:
+                done                                 # reply to the human
+    
+    End-loop guardrails (the orange box's exit conditions):
+      1. the model stops asking for tools  → natural end of turn
+      2. max_iterations reached            → hard stop, never spin forever
+    """
+    
+    from __future__ import annotations
+    
+    from collections.abc import Callable
+    from dataclasses import dataclass, field
+    from typing import Any
+    
+>   import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+
+pu/loop/agent.py:24: ModuleNotFoundError
+__________________________ test_active_session_stays ___________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-13/test_active_session_stays0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7143c21a30>
+
+    def test_active_session_stays(tmp_path, monkeypatch):
+        monkeypatch.setenv("PU_SESSION_IDLE_MINUTES", "60")
+>       app = make_pu(tmp_path / "home", client=ScriptedClient([]))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+evals/deterministic/test_session_rotation.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evals/helpers.py:56: in make_pu
+    from pu.app import PU
+pu/app.py:11: in <module>
+    from pu.loop.agent import LoopResult, Observer, run_loop
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """THE LOOP — observe → reason → act → repeat. This file is the whole trick.
+    
+    Every agent framework is ultimately this while-loop with more indirection:
+    
+        while not done:
+            response = llm(messages, tools)          # reason
+            if response asks for tools:
+                results = run(tool_calls)            # act
+                messages += results                  # observe
+            else:
+                done                                 # reply to the human
+    
+    End-loop guardrails (the orange box's exit conditions):
+      1. the model stops asking for tools  → natural end of turn
+      2. max_iterations reached            → hard stop, never spin forever
+    """
+    
+    from __future__ import annotations
+    
+    from collections.abc import Callable
+    from dataclasses import dataclass, field
+    from typing import Any
+    
+>   import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+
+pu/loop/agent.py:24: ModuleNotFoundError
+___________________________ test_empty_session_stays ___________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-13/test_empty_session_stays0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7143c2af50>
+
+    def test_empty_session_stays(tmp_path, monkeypatch):
+        monkeypatch.setenv("PU_SESSION_IDLE_MINUTES", "60")
+>       app = make_pu(tmp_path / "home", client=ScriptedClient([]))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+evals/deterministic/test_session_rotation.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evals/helpers.py:56: in make_pu
+    from pu.app import PU
+pu/app.py:11: in <module>
+    from pu.loop.agent import LoopResult, Observer, run_loop
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """THE LOOP — observe → reason → act → repeat. This file is the whole trick.
+    
+    Every agent framework is ultimately this while-loop with more indirection:
+    
+        while not done:
+            response = llm(messages, tools)          # reason
+            if response asks for tools:
+                results = run(tool_calls)            # act
+                messages += results                  # observe
+            else:
+                done                                 # reply to the human
+    
+    End-loop guardrails (the orange box's exit conditions):
+      1. the model stops asking for tools  → natural end of turn
+      2. max_iterations reached            → hard stop, never spin forever
+    """
+    
+    from __future__ import annotations
+    
+    from collections.abc import Callable
+    from dataclasses import dataclass, field
+    from typing import Any
+    
+>   import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+
+pu/loop/agent.py:24: ModuleNotFoundError
+________________________ test_rotation_can_be_disabled _________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-13/test_rotation_can_be_disabled0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f71439c9ed0>
+
+    def test_rotation_can_be_disabled(tmp_path, monkeypatch):
+        monkeypatch.setenv("PU_SESSION_IDLE_MINUTES", "0")
+>       app = make_pu(tmp_path / "home", client=ScriptedClient([]))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+evals/deterministic/test_session_rotation.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evals/helpers.py:56: in make_pu
+    from pu.app import PU
+pu/app.py:11: in <module>
+    from pu.loop.agent import LoopResult, Observer, run_loop
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """THE LOOP — observe → reason → act → repeat. This file is the whole trick.
+    
+    Every agent framework is ultimately this while-loop with more indirection:
+    
+        while not done:
+            response = llm(messages, tools)          # reason
+            if response asks for tools:
+                results = run(tool_calls)            # act
+                messages += results                  # observe
+            else:
+                done                                 # reply to the human
+    
+    End-loop guardrails (the orange box's exit conditions):
+      1. the model stops asking for tools  → natural end of turn
+      2. max_iterations reached            → hard stop, never spin forever
+    """
+    
+    from __future__ import annotations
+    
+    from collections.abc import Callable
+    from dataclasses import dataclass, field
+    from typing import Any
+    
+>   import anthropic
+E   ModuleNotFoundError: No module named 'anthropic'
+
+pu/loop/agent.py:24: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED evals/deterministic/test_pinned_models.py::test_switching_provider_adopts_its_pinned_default - ModuleNotFoundError: No module named 'anthropic'
+FAILED evals/deterministic/test_session_rotation.py::test_idle_session_rotates - ModuleNotFoundError: No module named 'anthropic'
+FAILED evals/deterministic/test_session_rotation.py::test_active_session_stays - ModuleNotFoundError: No module named 'anthropic'
+FAILED evals/deterministic/test_session_rotation.py::test_empty_session_stays - ModuleNotFoundError: No module named 'anthropic'
+FAILED evals/deterministic/test_session_rotation.py::test_rotation_can_be_disabled - ModuleNotFoundError: No module named 'anthropic'
+5 failed, 55 passed, 1 skipped in 1.31s

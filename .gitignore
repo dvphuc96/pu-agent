@@ -1,0 +1,30 @@
+# PU runtime homes and local state
+.pu/
+.pu-*/
+
+# Local secrets / provider credentials
+.env
+.env.*
+!.env.example
+credentials.json
+client_secret_*.json
+token.json
+.gcp/
+
+# Python / test / build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+.claude
+.playwright-mcp

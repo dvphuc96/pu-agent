@@ -1,0 +1,89 @@
+{
+  "phase": 8,
+  "name": "Report + Evaluation Harness",
+  "baseline": "pu-agent-phase7.zip",
+  "date": "2026-10-04",
+  "added_files": [
+    "docs/phase8/MANIFEST.sha256",
+    "docs/phase8/PHASE_8_REPORT_EVALUATION.md",
+    "docs/phase8/inventory.json",
+    "evals/datasets/report_quality.jsonl",
+    "evals/deterministic/test_phase8_report_evaluation.py",
+    "evals/judge/test_report_quality.py",
+    "pu/core/interfaces/evaluation.py",
+    "pu/evaluation/__init__.py",
+    "pu/evaluation/models.py",
+    "pu/evaluation/report.py",
+    "pu/reporting/__init__.py",
+    "pu/reporting/evidence.py",
+    "pu/reporting/models.py",
+    "pu/reporting/repository.py"
+  ],
+  "modified_files": [
+    "README.md",
+    "docs/architecture-whiteboard.png",
+    "docs/whiteboards/pu-architecture.excalidraw",
+    "pu/agents/report.py",
+    "pu/app.py",
+    "pu/config.py",
+    "pu/core/container.py",
+    "pu/core/interfaces/orchestration.py",
+    "pu/ops/dashboard.py",
+    "pu/ops/release_gate.py",
+    "pu/ops/static/index.html",
+    "pu/ops/static/js/main.js",
+    "pu/ops/static/js/views.js",
+    "pu/ops/whiteboard/build_pu_architecture.py",
+    "pu/orchestration/research.py",
+    "ARCHITECTURE.md"
+  ],
+  "removed_files": [],
+  "architecture": {
+    "reporting_package": "pu/reporting",
+    "evaluation_package": "pu/evaluation",
+    "report_repository": "FileReportRepository",
+    "quality_gate": [
+      "pass",
+      "pass_with_warning",
+      "fail"
+    ],
+    "judge_authoritative": false,
+    "judge_default_enabled": false
+  },
+  "metrics": {
+    "python_runtime": {
+      "files": 117,
+      "loc": 11933
+    },
+    "eval_python": {
+      "files": 58,
+      "loc": 7019
+    },
+    "frontend_js": {
+      "files": 9,
+      "loc": 2702
+    },
+    "deterministic_test_files": 51,
+    "deterministic_test_functions": 329,
+    "phase8_tests": 10
+  },
+  "validation": {
+    "phase3_to_phase8_targeted": "61 passed",
+    "green_deterministic": "340 passed, 13 skipped, 5 deselected",
+    "full_deterministic": "340 passed, 13 skipped, 30 baseline failures",
+    "phase8_live_judge": "1 skipped (no API key)",
+    "compileall": "pass",
+    "javascript_syntax": "pass",
+    "cli_help": "pass",
+    "whiteboard_visual_qa": "pass"
+  },
+  "known_baseline_failures": {
+    "count": 30,
+    "source": "same Phase-7 set: source ZIP lacks Git metadata/.env.example plus 5 stale assertions"
+  },
+  "assumptions": [
+    "publication dates are not inferred from snippets; unknown freshness stays unknown",
+    "FileReportRepository is local/dev and may be replaced by durable repository adapter in Phase 9",
+    "LLM-as-Judge is advisory and cannot override deterministic failure or approval/security boundaries"
+  ]
+}

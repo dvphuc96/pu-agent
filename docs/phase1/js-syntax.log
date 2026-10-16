@@ -1,0 +1,3 @@
+$ node --check pu/ops/static/js/*.js
+exit=0
+[3JTERM environment variable not set.

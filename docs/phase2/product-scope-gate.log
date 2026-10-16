@@ -1,0 +1,3 @@
+PASS
+providers: anthropic, openai
+integrations: gmail, google_calendar, google_drive, otel, tavily

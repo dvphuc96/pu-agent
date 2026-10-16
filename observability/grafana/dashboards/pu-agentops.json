@@ -1,0 +1,14 @@
+{
+  "title": "PU AgentOps",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "15s",
+  "panels": [
+    {"type":"stat","title":"SLO healthy","targets":[{"expr":"pu_slo_healthy"}],"gridPos":{"x":0,"y":0,"w":6,"h":4}},
+    {"type":"stat","title":"LLM p95 latency (ms)","targets":[{"expr":"pu_llm_p95_latency_ms"}],"gridPos":{"x":6,"y":0,"w":6,"h":4}},
+    {"type":"stat","title":"Tool error rate","targets":[{"expr":"pu_tool_error_rate"}],"gridPos":{"x":12,"y":0,"w":6,"h":4}},
+    {"type":"stat","title":"Workflow success rate","targets":[{"expr":"pu_workflow_success_rate"}],"gridPos":{"x":18,"y":0,"w":6,"h":4}},
+    {"type":"timeseries","title":"AgentOps events","targets":[{"expr":"pu_agentops_events_total"}],"gridPos":{"x":0,"y":4,"w":12,"h":7}},
+    {"type":"timeseries","title":"Security blocks","targets":[{"expr":"pu_security_blocks_total"}],"gridPos":{"x":12,"y":4,"w":12,"h":7}}
+  ]
+}
